@@ -14,6 +14,19 @@
   --text-300: #9fb0dc;
   --border: rgba(122,162,255,0.15);
   --shadow: rgba(0,0,0,0.35);
+  --container-max: 1200px;   /* base desktop (1366x768 look) */
+  --gap: 16px;
+}
+
+/* Adaptive container widths for larger desktops */
+@media (min-width: 1440px) {
+  :root { --container-max: 1280px; }
+}
+@media (min-width: 1920px) {
+  :root { --container-max: 1360px; } /* keep layout similar to 1366 look */
+}
+@media (min-width: 2560px) {
+  :root { --container-max: 1600px; } /* step up on ultra-wide */
 }
 
 * { box-sizing: border-box; }
@@ -74,7 +87,7 @@ body::before {
   padding: 12px clamp(12px, 4vw, 36px);
   display: flex;
   align-items: center;
-  gap: 20px;
+   gap: 16px;
 }
 
 .brand {
@@ -141,7 +154,7 @@ body::before {
   margin-left: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: clamp(8px, 1.4vw, 16px);
 }
 
 .nav-link {
@@ -178,10 +191,12 @@ body::before {
 .hero {
   max-width: clamp(960px, 84vw, 1400px);
   margin: 0 auto;
-  padding: clamp(40px, 6vw, 80px) clamp(16px, 3vw, 28px) 30px;
+  padding: 0;
   position: relative;
   overflow: clip;
   border-bottom: 1px solid var(--border);
+  width: 100%;
+  max-width: 100%;
 }
 
 .kicker {
@@ -200,7 +215,7 @@ body::before {
 }
 
 .hero-sub {
-  font-size: clamp(16px, 1.25vw, 22px);
+  font-size: clamp(16px, 1.15vw, 20px);
   color: var(--text-200);
   max-width: clamp(720px, 70vw, 1000px);
 }
@@ -240,19 +255,20 @@ body::before {
 /* Cards */
 .grid {
   display: grid;
-  gap: clamp(12px, 1.5vw, 22px);
+  gap: var(--gap);
 }
 
-.grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.grid-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.grid-3 { grid-template-columns: 1fr; }
+.grid-2 { grid-template-columns: 1fr; }
+
+@media (min-width: 900px) {
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 960px) {
-  .grid-3 { grid-template-columns: 1fr; }
-  .grid-2 { grid-template-columns: 1fr; }
+/* Large desktop: restore 3 columns */
+@media (min-width: 1280px) {
+  .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .card {
@@ -290,7 +306,7 @@ body::before {
 
 /* Section */
 .section {
-  max-width: clamp(960px, 84vw, 1400px);
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 28px) clamp(40px, 6vw, 64px);
 }
@@ -422,6 +438,9 @@ a.inline:hover {
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 3vw, 28px) 30px;
 }
 
 /* Security gridlines over hero */
@@ -506,6 +525,21 @@ a.inline:hover {
 }
 
 /* Respect users who prefer reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .card,
+  .bg-slide,
+  .hero-actions .btn-primary,
+  .reveal {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Background slider stays edge-to-edge */
+.hero-bg, .bg-slide, .hero-overlay, .hero-gridlines { inset: 0; }
+
+/* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .nav-link,
   .card,
