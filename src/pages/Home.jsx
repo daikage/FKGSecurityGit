@@ -6,7 +6,7 @@ const Home = () => {
   const slides = [
     { src: 'https://i.ibb.co/LhvNLb3f/portrait-male-security-guard-with-barbed-wire-fence.jpg?q=80&w=1920&auto=format&fit=crop', alt: 'Operations center monitoring' },
     { src: 'https://i.ibb.co/xKxpKGT2/Gemini-Generated-Image-47suwl47suwl47su.png?q=80&w=1920&auto=format&fit=crop', alt: 'Executive movement through airport' },
-    { src: 'https://i.ibb.co/zWM7xhF8/Gemini-Generated-Image-khhnhukhhnhukhhn.png?q=80&w=1920&auto=format&fit=crop', alt: 'Maritime cargo lanes' },
+    { src: 'https://i.ibb.co/nshXVssF/FKG-Security-man-1.png?q=80&w=1920&auto=format&fit=crop', alt: 'Maritime cargo lanes' },
     { src: 'https://i.ibb.co/DD3JrMZr/Gemini-Generated-Image-5rlffe5rlffe5rlf.png?q=80&w=1920&auto=format&fit=crop', alt: 'Global logistics network' },
   ]
 
