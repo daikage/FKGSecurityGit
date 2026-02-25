@@ -71,7 +71,7 @@ body::before {
   width: 100%;         /* full-bleed nav */
   max-width: none;     /* remove 1200px cap */
   margin: 0;           /* no centering container */
-  padding: 12px clamp(12px, 4vw, 28px); /* responsive side padding */
+  padding: 12px clamp(12px, 4vw, 36px);
   display: flex;
   align-items: center;
   gap: 20px;
@@ -88,15 +88,15 @@ body::before {
 .brand-logo-wrap {
   width: 38px;
   height: 38px;
-  border: 2px solid var(--gold-400);
+  border: 0; /* removed gold border */
   border-radius: 8px;
   display: grid;
   place-items: center;
-  background: rgba(10, 18, 36, 0.45);
+  background: rgba(10, 18, 36, 0.6);
   box-shadow:
-    0 0 0 2px rgba(176,141,87,0.18),
-    0 10px 25px rgba(0,0,0,0.35);
-  overflow: hidden;
+    0 8px 25px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(122,162,255,0.14); /* soft blue ring */
+  overflow: visible;
 }
 
 .brand-logo {
@@ -108,18 +108,18 @@ body::before {
 }
 
 .brand-mark {
-  width: 34px;
+ /* width: 34px;
   height: 34px;
   border: 2px solid var(--gold-400);
   border-radius: 6px;
   box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.2);
   display: grid;
   place-items: center;
-  color: var(--gold-400);
-  font-weight: 700;
+  color: var(--gold-400); 
+   font-weight: 700;
   font-size: 16px;
   position: relative;
-  isolation: isolate;
+  isolation: isolate;*/
 }
 .brand-mark::after {
   content: '';
@@ -176,9 +176,9 @@ body::before {
 
 /* Hero */
 .hero {
-  max-width: 1200px;
+  max-width: clamp(960px, 84vw, 1400px);
   margin: 0 auto;
-  padding: 60px 20px 30px;
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 3vw, 28px) 30px;
   position: relative;
   overflow: clip;
   border-bottom: 1px solid var(--border);
@@ -193,17 +193,16 @@ body::before {
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: clamp(32px, 3.2vw, 56px);
   margin: 16px 0;
   color: var(--text-100);
   text-shadow: 0 4px 30px rgba(30,58,138,0.25);
 }
 
 .hero-sub {
-  font-size: 18px;
+  font-size: clamp(16px, 1.25vw, 22px);
   color: var(--text-200);
-  max-width: 900px;
+  max-width: clamp(720px, 70vw, 1000px);
 }
 
 .hero-actions {
@@ -241,7 +240,7 @@ body::before {
 /* Cards */
 .grid {
   display: grid;
-  gap: 16px;
+  gap: clamp(12px, 1.5vw, 22px);
 }
 
 .grid-3 {
@@ -260,7 +259,7 @@ body::before {
   background: rgba(10, 18, 36, 0.6);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 18px;
+  padding: clamp(14px, 1.4vw, 22px);
   box-shadow: 0 8px 25px var(--shadow);
   position: relative;
   overflow: hidden;
@@ -291,14 +290,14 @@ body::before {
 
 /* Section */
 .section {
-  max-width: 1200px;
+  max-width: clamp(960px, 84vw, 1400px);
   margin: 0 auto;
-  padding: 30px 20px 50px;
+  padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 28px) clamp(40px, 6vw, 64px);
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 26px;
+  font-size: clamp(22px, 2vw, 32px);
   margin-bottom: 14px;
   color: var(--text-100);
 }
@@ -313,14 +312,20 @@ body::before {
 
 /* Footer */
 .footer {
+  position: relative;
+  top: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
   border-top: 1px solid var(--border);
-  background: rgba(11,18,36,0.7);
+  background: rgba(11,18,36,0.85);
 }
 
 .footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 20px 28px;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 16px clamp(16px, 4vw, 40px) clamp(24px, 3vw, 36px);
   display: grid;
   gap: 12px;
   color: var(--text-300);
@@ -489,4 +494,25 @@ a.inline:hover {
 /* Optional: tighter brand spacing on small screens */
 @media (max-width: 520px) {
   .brand-text { font-size: 16px; }
+}
+
+/* Ensure header/footer remain full-bleed with adaptive padding */
+.nav {
+  padding: 12px clamp(12px, 4vw, 36px);
+}
+
+.footer-inner {
+  padding: 16px clamp(16px, 4vw, 40px) clamp(24px, 3vw, 36px);
+}
+
+/* Respect users who prefer reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .card,
+  .bg-slide,
+  .hero-actions .btn-primary,
+  .reveal {
+    transition: none !important;
+    animation: none !important;
+  }
 }
