@@ -14,7 +14,7 @@ const Sectors = () => {
       <div className="mosaic" style={{ marginTop: 16 }}>
         <img src="https://i.ibb.co/5WjndKQJ/collin-8-Fx-Ji5wuw-Kc-unsplash.jpg?q=80&w=1200&auto=format&fit=crop" alt="Ops center" loading="lazy" />
         <img src="https://i.ibb.co/chZ59VDf/4d2199118e9f06085e8166b006227b34.jpg?q=80&w=1200&auto=format&fit=crop" alt="Maritime terminal" loading="lazy" />
-        <img src="https://i.ibb.co/zWM7xhF8/Gemini-Generated-Image-khhnhukhhnhukhhn.png?q=80&w=1200&auto=format&fit=crop" alt="Energy infrastructure" loading="lazy" />
+        <img src="https://i.ibb.co/nshXVssF/FKG-Security-man-1.png?q=80&w=1200&auto=format&fit=crop" alt="Energy infrastructure" loading="lazy" />
         <img src="https://i.ibb.co/hxXtFvcy/tasha-kostyuk-Tt-MKq3l-Jm-U-unsplash.jpg?q=80&w=1200&auto=format&fit=crop" alt="Urban network" loading="lazy" />
         <img src="https://i.ibb.co/LhvNLb3f/portrait-male-security-guard-with-barbed-wire-fence.jpg?q=80&w=1200&auto=format&fit=crop" alt="Airport corridor" loading="lazy" />
         <img src="https://i.ibb.co/DD3JrMZr/Gemini-Generated-Image-5rlffe5rlffe5rlf.png?q=80&w=1200&auto=format&fit=crop" alt="Field logistics" loading="lazy" />

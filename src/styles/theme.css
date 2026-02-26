@@ -286,7 +286,7 @@ body::before {
   padding: 220px;
   position: relative;
   overflow: clip;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none; /* remove faint line under hero buttons */
   width: 100%;
   max-width: 100%;
 }
@@ -348,6 +348,7 @@ body::before {
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
+  text-decoration: none; /* remove underline from button links */
   min-height: 44px; /* accessible touch target */
 }
 
@@ -366,7 +367,10 @@ body::before {
 }
 
 .btn-primary:hover { filter: brightness(1.05); }
-.btn:hover { border-color: rgba(122,162,255,0.35); }
+.btn:hover {
+  border-color: rgba(122,162,255,0.35);
+  text-decoration: none; /* ensure no underline on hover */
+}
 
 /* Cards */
 .grid {
@@ -647,7 +651,52 @@ a.inline:hover {
 /* Ensure header/footer remain full-bleed with adaptive padding */
 .nav {
   padding: 12px clamp(12px, 4vw, 36px);
+  position: relative;
 }
+
+ .nav-toggle {
+   display: none;
+   margin-left: auto;
+   padding: 8px;
+   border: 1px solid var(--border);
+   background: rgba(11, 18, 36, 0.6);
+   color: var(--text-200);
+   border-radius: 8px;
+   box-shadow: 0 4px 12px var(--shadow);
+ }
+
+ /* Mobile dropdown behavior */
+@media (max-width: 800px) {
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .nav-links {
+    display: none; /* hidden until toggled */
+    position: absolute;
+    top: 100%;
+    right: clamp(12px, 4vw, 36px);
+    left: clamp(12px, 4vw, 36px);
+    background: rgba(11, 18, 36, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 30px var(--shadow);
+    border-radius: 12px;
+    padding: 10px;
+    z-index: 200;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+  }
+
+    .nav-links.open { display: flex; }
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .nav-link::after { display: none; } /* remove underline animation in dropdown */
+}
+
+ .nav-toggle:hover { color: var(--text-100); border-color: rgba(122,162,255,0.35); }
 
 .footer-inner {
   padding: 16px clamp(16px, 4vw, 40px) clamp(24px, 3vw, 36px);
