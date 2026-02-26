@@ -1,7 +1,7 @@
 export const briefings = [
   {
     id: 'port-security-west-africa',
-    title: 'Assessing Port Security in West Africa',
+    title: 'Assessing Port Security in the United States and beyond: Key Hubs and Emerging Threats',
     date: '2026-02-18',
     sector: 'Maritime',
     summary:
