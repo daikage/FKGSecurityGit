@@ -19,7 +19,7 @@ const Services = () => {
             />
           </div>
           <h3>Fixed & Mobile Asset Protection</h3>
-          <p className="muted">Infrastructure protection, convoy security, site hardening, and route assurance—calibrated to mission risk thresholds.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Infrastructure protection, convoy security, site hardening, and route assurance—calibrated to mission risk thresholds.</p>
         </div>
 
         <div className="card">
@@ -32,7 +32,7 @@ const Services = () => {
             />
           </div>
           <h3>Executive Protection</h3>
-          <p className="muted">Low-profile protective details for principals, teams, and site visits with discreet coordination.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Low-profile protective details for principals, teams, and site visits with discreet coordination.</p>
         </div>
 
         <div className="card">
@@ -45,7 +45,7 @@ const Services = () => {
             />
           </div>
           <h3>Strategic Intelligence</h3>
-          <p className="muted">Geopolitical analysis, threat monitoring, risk modeling, and briefings for decision makers.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Geopolitical analysis, threat monitoring, risk modeling, and briefings for decision makers.</p>
         </div>
 
         <div className="card">
@@ -58,7 +58,7 @@ const Services = () => {
             />
           </div>
           <h3>Logistics & Life Support</h3>
-          <p className="muted">Supply chain security, medical support planning, emergency response, and continuity operations.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Supply chain security, medical support planning, emergency response, and continuity operations.</p>
         </div>
       </div>
     </section>

@@ -414,14 +414,19 @@ body::before {
   box-shadow: 0 12px 35px rgba(0,0,0,0.45);
 }
 
-.card h3 {
-  margin: 6px 0 8px;
-  font-family: 'Playfair Display', serif;
-  color: var(--text-100);
-}
-
 .card .muted {
   color: var(--text-200);
+  text-align: left; /* ensure muted text is left-aligned across cards */
+}
+
+/* Align muted paragraph start under the title text (to the right of the icon) */
+.service-card .muted {
+  margin-left: 46px; /* 36px icon + 10px gap */
+}
+
+/* Optionally tighten on very small screens */
+@media (max-width: 520px) {
+  .service-card .muted { margin-left: 42px; }
 }
 
 /* Section */

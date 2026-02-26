@@ -52,7 +52,7 @@ const Home = () => {
           </Reveal>
 
           <div className="grid" style={{ gap: 12 }}>
-            <Reveal className="card">
+            <Reveal className="card service-card">
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div className="icon-circle">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-4 8-7 9-3-1-7-4-7-9V7l7-4z" stroke="#7aa2ff" strokeWidth="1.6"/></svg>
@@ -62,7 +62,7 @@ const Home = () => {
               <p className="muted">Precision safeguarding of critical infrastructure and transit—low-profile, high-readiness posture.</p>
             </Reveal>
 
-            <Reveal className="card" delay={1}>
+            <Reveal className="card service-card" delay={1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div className="icon-circle">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l4 4-6 6-4-4 6-6zM3 21l6-2-4-4-2 6z" stroke="#7aa2ff" strokeWidth="1.6"/></svg>
@@ -72,7 +72,7 @@ const Home = () => {
               <p className="muted">Discreet protective services for principals and delegations, harmonized with local context.</p>
             </Reveal>
 
-            <Reveal className="card" delay={2}>
+            <Reveal className="card service-card" delay={2}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div className="icon-circle">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="#7aa2ff" strokeWidth="1.6"/></svg>
@@ -82,7 +82,7 @@ const Home = () => {
               <p className="muted">Predictive analysis, threat assessments, and decision support—brainpower before brawn.</p>
             </Reveal>
 
-            <Reveal className="card" delay={3}>
+            <Reveal className="card service-card" delay={3}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div className="icon-circle">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#7aa2ff" strokeWidth="1.6"/></svg>
@@ -100,15 +100,15 @@ const Home = () => {
         <div className="grid grid-3">
           <Reveal className="card">
             <h3>Prevention First</h3>
-            <p className="muted">Mitigate, neutralize risk, stabilize environments—enable progress.</p>
+            <p className="muted" style={{textAlign: 'center'}}>Mitigate, neutralize risk, stabilize environments—enable progress.</p>
           </Reveal>
           <Reveal className="card" delay={1}>
             <h3>The Quiet Professional</h3>
-            <p className="muted">Low-visibility, high-effect posture, built on discipline and discretion.</p>
+            <p className="muted" style={{textAlign: 'center'}}>Low-visibility, high-effect posture, built on discipline and discretion.</p>
           </Reveal>
           <Reveal className="card" delay={2}>
             <h3>Compliance-led</h3>
-            <p className="muted">ICoCA, ISO 18788, ISO 9001, and human rights policy embedded in operations.</p>
+            <p className="muted" style={{textAlign: 'center'}}>ICoCA, ISO 18788, ISO 9001, and human rights policy embedded in operations.</p>
           </Reveal>
         </div>
       </section>

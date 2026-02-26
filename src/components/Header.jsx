@@ -9,12 +9,13 @@ const Header = () => {
     <header className="header">
       <nav className="nav">
         <Link to="/" className="brand" aria-label="FKG Security Home">
-          <div className="brand-logo-wrap">
+          <div className="brand-logo">
             <img
               src={logoUrl}
               alt="FKG Security logo"
               className="brand-logo"
               loading="eager"
+              style={{ maxWidth: 70, width: '200%', height: 'auto', marginTop: -15 }}
             />
           </div>
           <div className="brand-text"></div>
@@ -56,6 +57,16 @@ const Header = () => {
             onClick={() => setMobileOpen(false)}
           >The Situation Room</NavLink>
           <NavLink
+            to="/employment"
+            className={({isActive}) => `nav-link${isActive ? ' active' : ''}`}
+            onClick={() => setMobileOpen(false)}
+          >Employment</NavLink>
+          <NavLink
+            to="/training"
+            className={({isActive}) => `nav-link${isActive ? ' active' : ''}`}
+            onClick={() => setMobileOpen(false)}
+          >Training</NavLink>
+          <NavLink
             to="/contact"
             className={({isActive}) => `nav-link${isActive ? ' active' : ''}`}
             onClick={() => setMobileOpen(false)}
@@ -65,6 +76,8 @@ const Header = () => {
             className={({isActive}) => `nav-link${isActive ? ' active' : ''}`}
             onClick={() => setMobileOpen(false)}
           >Secure Portal</NavLink>
+           
+          
         </div>
       </nav>
     </header>

@@ -13,6 +13,8 @@ import SituationRoom from './pages/SituationRoom.jsx'
 import Contact from './pages/Contact.jsx'
 import Portal from './pages/Portal.jsx'
 import SplashScreen from './components/SplashScreen.jsx'
+import Employment from './pages/Employment.jsx'
+import Training from './pages/Training.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,6 +38,8 @@ function App() {
           <Route path="/compliance" element={<Compliance />} />
           <Route path="/situation-room" element={<SituationRoom />} />
           <Route path="/contact" element={<Contact />} />
+           <Route path="/employment" element={<Employment />} />
+          <Route path="/training" element={<Training />} />
           <Route path="/portal" element={<Portal />} />
         </Routes>
       </main>

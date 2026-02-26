@@ -23,27 +23,27 @@ const Sectors = () => {
       <div className="grid grid-3" style={{ marginTop: 16 }}>
         <Reveal className="card">
           <h3>NGOs & Humanitarian</h3>
-          <p className="muted">Field security, access facilitation, and duty-of-care frameworks.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Field security, access facilitation, and duty-of-care frameworks.</p>
         </Reveal>
         <Reveal className="card" delay={1}>
           <h3>Government & Diplomatic</h3>
-          <p className="muted">Delegation protection, site risk assessments, and movement planning.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Delegation protection, site risk assessments, and movement planning.</p>
         </Reveal>
         <Reveal className="card" delay={2}>
           <h3>Energy & Critical Infrastructure</h3>
-          <p className="muted">Asset protection, perimeter integrity, and resilience programs.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Asset protection, perimeter integrity, and resilience programs.</p>
         </Reveal>
         <Reveal className="card" delay={3}>
           <h3>Maritime & Port Security</h3>
-          <p className="muted">Terminal access, cargo risk controls, and waterside coordination.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Terminal access, cargo risk controls, and waterside coordination.</p>
         </Reveal>
         <Reveal className="card" delay={4}>
           <h3>Logistics & Supply Chain</h3>
-          <p className="muted">Route intelligence, convoy security, and continuity planning.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Route intelligence, convoy security, and continuity planning.</p>
         </Reveal>
         <Reveal className="card" delay={5}>
           <h3>Corporate & High-Net-Worth</h3>
-          <p className="muted">Executive protection, travel security, and event risk management.</p>
+          <p className="muted" style={{textAlign: 'center'}}>Executive protection, travel security, and event risk management.</p>
         </Reveal>
       </div>
     </section>

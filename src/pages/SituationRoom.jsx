@@ -16,10 +16,10 @@ const SituationRoom = () => {
         {briefings.map((b, idx) => (
           <Reveal key={b.id} className="card" delay={idx % 3}>
             <h3>{b.title}</h3>
-            <p className="muted">
+            <p className="muted" style={{ textAlign: 'center'}}>
               <strong style={{ color: 'var(--blue-300)' }}>{b.sector}</strong> • {new Date(b.date).toLocaleDateString()}
             </p>
-            <p className="muted">{b.summary}</p>
+            <p className="muted" style={{ textAlign: 'center' }}>{b.summary}</p>
           </Reveal>
         ))}
       </div>
