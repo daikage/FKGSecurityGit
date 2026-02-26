@@ -20,7 +20,7 @@ function App() {
 
   // Brief splash on initial load
   useEffect(() => {
-    const t = setTimeout(() => setShowSplash(false), 3800) // adjust duration if desired
+    const t = setTimeout(() => setShowSplash(false), 4000) // adjust duration if desired
     return () => clearTimeout(t)
   }, [])
 
