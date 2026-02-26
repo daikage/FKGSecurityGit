@@ -1,15 +1,7 @@
 export const briefings = [
   {
-<<<<<<< Updated upstream
-    id: 'port-security-united-states',
-    title: 'Assessing Port Security in the United States',
-=======
     id: 'port-security-west-africa',
-    title: 'Assessing Port Security in the United States and beyond: Key Hubs and Emerging Threats',
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    title: 'Assessing Port Security in West Africa',
     date: '2026-02-18',
     sector: 'Maritime',
     summary:
