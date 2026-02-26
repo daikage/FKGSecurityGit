@@ -320,15 +320,22 @@ body::before {
   font-size: clamp(18px, 1.25vw, 22px);
   color: var(--text-200);
   max-width: clamp(720px, 70vw, 1000px);
+  margin-left: auto;   /* center block horizontally */
+  margin-right: auto;  /* center block horizontally */
+  text-align: center;  /* center the text inside */
 }
 
 .hero-actions {
-   margin-top: 32px;
+  margin-top: 32px;
   display: flex;
   gap: 12px;
+  justify-content: center; /* center buttons horizontally */
 }
 @media (max-width: 640px) {
-  .hero-actions { flex-direction: column; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center; /* center the column stack */
+  }
   .hero-actions .btn { width: 100%; }
 }
 
