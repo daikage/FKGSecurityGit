@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -12,12 +12,21 @@ import Compliance from './pages/Compliance.jsx'
 import SituationRoom from './pages/SituationRoom.jsx'
 import Contact from './pages/Contact.jsx'
 import Portal from './pages/Portal.jsx'
+import SplashScreen from './components/SplashScreen.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showSplash, setShowSplash] = useState(true)
+
+  // Brief splash on initial load
+  useEffect(() => {
+    const t = setTimeout(() => setShowSplash(false), 3800) // adjust duration if desired
+    return () => clearTimeout(t)
+  }, [])
 
   return (
     <div className="app-shell">
+      {showSplash && <SplashScreen />}
       <Header />
       <main className="main">
         <Routes>

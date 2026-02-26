@@ -191,6 +191,94 @@ body::before {
 }
 .nav-link.active::after { transform: scaleX(1); }
 
+/* Splash / Briefing-style loader */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background:
+    linear-gradient(180deg, rgba(7,11,23,0.85), rgba(7,11,23,0.92) 40%, rgba(7,11,23,0.98));
+  display: grid;
+  place-items: center;
+  pointer-events: none; /* prevents accidental clicks */
+}
+
+.splash-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: 16px;
+  background: rgba(10,18,36,0.4);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+.splash-logo-wrap {
+  display: inline-grid;
+  place-items: center;
+  padding: clamp(10px, 2vw, 16px);
+  border-radius: 12px;
+  background: rgba(10,18,36,0.55);
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(122,162,255,0.16);
+}
+.splash-logo {
+  width: clamp(140px, 28vw, 240px);
+  height: auto;
+  filter: drop-shadow(0 4px 24px rgba(49,87,192,0.35));
+}
+
+.splash-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3.2vw, 28px);
+  margin-top: 16px;
+  color: var(--text-100);
+  text-shadow: 0 4px 30px rgba(30,58,138,0.25);
+}
+.splash-meta {
+  font-size: clamp(12px, 2.2vw, 14px);
+  margin-top: 6px;
+  color: var(--text-300);
+}
+
+/* Gridlines overlay */
+.splash-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(49,87,192,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49,87,192,0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  mask-image: radial-gradient(80% 60% at 50% 40%, rgba(0,0,0,.7), transparent 80%);
+  z-index: 1;
+}
+
+/* Scanning line */
+.splash-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(49,87,192,0.10), transparent);
+  animation: scanY 2.2s ease-in-out infinite;
+  z-index: 1;
+}
+@keyframes scanY {
+  0% { transform: translateY(-20%); opacity: 0.0; }
+  20% { opacity: 0.8; }
+  50% { transform: translateY(40%); opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0.0; }
+}
+
+/* Mobile-safe layout */
+@media (max-width: 520px) {
+  .splash-inner {
+    width: min(92vw, 520px);
+  }
+}
+
 /* Hero */
 .hero {
   max-width: clamp(960px, 84vw, 1400px);
