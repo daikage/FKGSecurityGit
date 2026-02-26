@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import BackgroundSlider from '../components/BackgroundSlider'
 import Reveal from '../components/Reveal'
+import logo from '../assets/fkg-logo.png'
 
 const Home = () => {
   const slides = [
@@ -18,6 +19,12 @@ const Home = () => {
       <section className="hero">
         <BackgroundSlider images={slides} interval={6500} />
         <div className="hero hero-content">
+          <img
+            src={logo}
+            alt="FKG Security logo"
+            className="hero-logo"
+            style={{ maxWidth: 200, width: '100%', height: 'auto', marginBottom: 12 }}
+          />
           <div className="kicker reveal">Global Risk Management</div>
           <Reveal as="h1" className="hero-title">Securing the Path for Global Progress.</Reveal>
           <Reveal delay={2}>
@@ -33,7 +40,6 @@ const Home = () => {
       </section>
 
       <section className="section">
-        <div className="accent-line"></div>
         <h2 className="section-title">Core Pillars</h2>
 
         <div className="grid grid-2" style={{ marginTop: 16 }}>
@@ -90,7 +96,6 @@ const Home = () => {
       </section>
 
       <section className="section">
-        <div className="accent-line"></div>
         <h2 className="section-title">Operating Ethos</h2>
         <div className="grid grid-3">
           <Reveal className="card">

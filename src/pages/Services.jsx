@@ -13,7 +13,7 @@ const Services = () => {
           {/* Strategic image */}
           <div className="img-card" style={{ height: 160, marginBottom: 12 }}>
             <img
-              src="https://i.ibb.co/zWM7xhF8/Gemini-Generated-Image-khhnhukhhnhukhhn.png?q=80&w=1600&auto=format&fit=crop"
+              src="https://i.ibb.co/nshXVssF/FKG-Security-man-1.png?q=80&w=1600&auto=format&fit=crop"
               alt="Secured perimeter and terminal operations"
               loading="lazy"
             />

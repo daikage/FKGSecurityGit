@@ -81,13 +81,14 @@ body::before {
 }
 
 .nav {
-  width: 100%;         /* full-bleed nav */
+  width: 100%;
   max-width: none;     /* remove 1200px cap */
   margin: 0;           /* no centering container */
   padding: 12px clamp(12px, 4vw, 36px);
   display: flex;
   align-items: center;
-   gap: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -155,8 +156,11 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   gap: clamp(8px, 1.4vw, 16px);
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
-
+.nav-links::-webkit-scrollbar { display: none; } /* hide scrollbar on mobile */
 .nav-link {
   color: var(--text-200);
   text-decoration: none;
@@ -198,6 +202,16 @@ body::before {
   width: 100%;
   max-width: 100%;
 }
+@media (max-width: 1024px) {
+  .hero {
+    padding: clamp(140px, 20vw, 180px) clamp(16px, 5vw, 28px) clamp(32px, 8vw, 60px);
+  }
+}
+@media (max-width: 640px) {
+  .hero {
+    padding: clamp(110px, 24vw, 140px) clamp(14px, 6vw, 20px) clamp(28px, 10vw, 50px);
+  }
+}
 
 .kicker {
   color: var(--blue-300);
@@ -225,6 +239,10 @@ body::before {
   display: flex;
   gap: 12px;
 }
+@media (max-width: 640px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+}
 
 .btn {
   padding: 12px 24px;
@@ -235,6 +253,7 @@ body::before {
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
+  min-height: 44px; /* accessible touch target */
 }
 
 .btn-primary {
@@ -311,6 +330,11 @@ body::before {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 28px) clamp(40px, 6vw, 64px);
+}
+@media (max-width: 640px) {
+  .section {
+    padding: clamp(20px, 4vw, 32px) clamp(14px, 5vw, 22px) clamp(36px, 8vw, 56px);
+  }
 }
 
 .section-title {
@@ -511,9 +535,17 @@ a.inline:hover {
 @media (max-width: 960px) {
   .mosaic { grid-template-columns: repeat(3, 1fr); }
 }
+@media (max-width: 960px) {
+  .mosaic img { height: 100px; }
+}
+@media (max-width: 520px) {
+  .mosaic img { height: 80px; }
+}
 
 /* Optional: tighter brand spacing on small screens */
 @media (max-width: 520px) {
+  .brand-logo-wrap { width: 34px; height: 34px; }
+  .brand-logo { height: 22px; }
   .brand-text { font-size: 16px; }
 }
 
@@ -551,4 +583,10 @@ a.inline:hover {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Optional: avoid horizontal scroll caused by overly wide content blocks */
+.hero-content,
+.section {
+  overflow-wrap: anywhere;
 }
