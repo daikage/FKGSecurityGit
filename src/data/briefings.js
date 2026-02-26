@@ -6,6 +6,9 @@ export const briefings = [
 =======
     id: 'port-security-west-africa',
     title: 'Assessing Port Security in the United States and beyond: Key Hubs and Emerging Threats',
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     date: '2026-02-18',
     sector: 'Maritime',
